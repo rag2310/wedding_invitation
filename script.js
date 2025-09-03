@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const findAndDisplayInvitation = () => {
         const query = searchInput.value.trim().toLowerCase();
         if (!query) {
-            errorMessage.textContent = 'Por favor, introduce tu nombre.'; // Traducido
+            errorMessage.textContent = 'Por favor, introduce tu nombre.';
             return;
         }
 
@@ -40,22 +40,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 700);
             
         } else {
-            errorMessage.textContent = "No pudimos encontrar tu nombre. Por favor, revisa la ortografía."; // Traducido
+            errorMessage.textContent = "No pudimos encontrar tu nombre. Por favor, revisa la ortografía.";
         }
     };
 
-    // 3. Rellenar detalles específicos del invitado
+    // 3. Rellenar detalles específicos del invitado Y CREAR EL ENLACE DE WHATSAPP
     const personalizeInvitation = (guest) => {
-        document.getElementById('guest-name').textContent = `Estimado/a ${guest.name}`; // Traducido
-        
-        // Lógica de pases en español ("persona" vs "personas")
-        const passesText = guest.passes > 1 ? `${guest.passes} personas` : `1 persona`; // Traducido
+        // --- Texto de bienvenida (sin cambios) ---
+        document.getElementById('guest-name').textContent = `Estimado/a ${guest.name}`;
+        const passesText = guest.passes > 1 ? `${guest.passes} personas` : `1 persona`;
         document.getElementById('guest-passes').textContent = passesText;
+
+        // --- ¡NUEVA LÓGICA PARA WHATSAPP! ---
+        const whatsAppButton = document.getElementById('whatsapp-link');
+
+        // ¡¡IMPORTANTE!! Cambia este número por tu número de teléfono real (incluyendo el código de país).
+        const phoneNumber = '+50588174264'; 
         
+        // Creamos el mensaje personalizado con el nombre del invitado.
+        const rawMessage = `¡Hola! Soy ${guest.name} y me gustaría confirmar mi asistencia (${passesText}) a la boda. ¡Muchas gracias!`;
+        
+        // Codificamos el mensaje para que funcione correctamente en una URL (convierte espacios a %20, etc.)
+        const encodedMessage = encodeURIComponent(rawMessage);
+
+        // Construimos la URL final de WhatsApp
+        const finalUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+        // Asignamos la URL personalizada al botón
+        whatsAppButton.href = finalUrl;
+        
+        // Iniciar el contador (sin cambios)
         setupCountdown();
     };
 
-    // 4. Lógica del contador de tiempo con etiquetas en español
+    // 4. Lógica del contador (sin cambios)
     const setupCountdown = () => {
         const weddingDate = new Date("October 26, 2025 16:00:00").getTime();
         const countdownElement = document.getElementById('countdown');
@@ -66,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (distance < 0) {
                 clearInterval(interval);
-                countdownElement.innerHTML = "<div>¡El gran día ha llegado!</div>"; // Traducido
+                countdownElement.innerHTML = "<div>¡El gran día ha llegado!</div>";
                 return;
             }
 
@@ -75,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Etiquetas del contador traducidas a español (Días, Horas, Minutos, Segundos)
             countdownElement.innerHTML = `
                 <div>${days}<span>Días</span></div>
                 <div>${hours}<span>Horas</span></div>
@@ -85,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     };
     
-    // Event Listeners
+    // Event Listeners (sin cambios)
     searchButton.addEventListener('click', findAndDisplayInvitation);
     searchInput.addEventListener('keyup', (event) => {
         if (event.key === 'Enter') {
