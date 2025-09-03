@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;500&display=swap');
+
+body { font-family: 'Quicksand', sans-serif; margin: 0; color: #333; background-color: #ffffff; text-align: center; }
+h1, h2 { font-family: 'Playfair Display', serif; }
+
+/* --- GUEST FINDER STYLES (NEW TUXEDO IMAGE) --- */
+#guest-finder {
+    display: flex; justify-content: center; align-items: center; height: 100vh;
+    /* THIS IS THE NEW IMAGE URL, INSPIRED BY YOUR EXAMPLE */
+    background: url('https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+    position: relative; color: white; padding: 20px;
+}
+#guest-finder::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); }
+.finder-content {
+    position: relative; z-index: 1; text-align: center; max-width: 550px; width: 100%;
+    background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); padding: 40px; border-radius: 10px;
+}
+.finder-content h1 { font-size: 3rem; margin-bottom: 10px; }
+#guest-search-input { width: 90%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; margin-top: 20px; font-size: 1rem; }
+#search-button {
+    width: 95%; padding: 12px; margin-top: 15px; border: none; border-radius: 5px;
+    background-color: #c5a47e; color: white; font-size: 1.1rem; font-weight: bold;
+    cursor: pointer; transition: background-color 0.3s;
+}
+#search-button:hover { background-color: #b39169; }
+#error-message { margin-top: 15px; color: #ffdddd; font-weight: 500; min-height: 20px; }
+
+
+/* --- ORIGINAL INVITATION DESIGN STYLES (NEW TUXEDO IMAGE) --- */
+.hero-section {
+    height: 100vh; color: white; display: flex; justify-content: center; align-items: center; text-align: center;
+    /* THIS IS THE NEW IMAGE URL, INSPIRED BY YOUR EXAMPLE */
+    background: url('https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax Effect */ position: relative;
+}
+.hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.4); }
+.hero-content { position: relative; z-index: 1; }
+.hero-content h1 { font-size: 5rem; margin: 0; }
+.hero-content p { font-size: 1.5rem; }
+.hero-content .date { font-size: 1.8rem; font-weight: 500; margin-top: 20px; border: 2px solid white; display: inline-block; padding: 10px 20px; }
+
+section { padding: 80px 20px; }
+.guest-welcome { background: #f8f8f8; }
+#guest-name { color: #c5a47e; font-size: 2.5rem; }
+
+#countdown { display: flex; justify-content: center; gap: 20px; font-size: 2rem; color: #c5a47e; font-weight: 500; }
+#countdown > div { display: flex; flex-direction: column; }
+#countdown > div span { font-size: 1rem; color: #333; }
+
+.event-section { color: white; background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 100px 20px; }
+.event-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); }
+.event-content { position: relative; z-index: 1; }
+
+.ceremony { background-image: url('https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); }
+
+.reception { background-image: url('https://images.pexels.com/photos/1128783/pexels-photo-1128783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); }
+
+.event-icon { font-size: 3rem; margin-bottom: 20px; }
+.map-button { display: inline-block; margin-top: 20px; padding: 10px 30px; border: 2px solid white; color: white; text-decoration: none; font-weight: 500; transition: all 0.3s; }
+.map-button:hover { background: white; color: #333; }
+
+.sponsors-section { background: #f8f8f8; }
+.sponsor-name { font-style: italic; font-size: 1.2rem; margin-top: 10px; }
+.info-section { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.info-item { max-width: 300px; }
+.info-icon { font-size: 2.5rem; color: #c5a47e; margin-bottom: 15px; }
+.dress-code { font-weight: bold; font-size: 1.2rem; }
+.info-link { text-decoration: none; font-weight: 500; color: #c5a47e; border-bottom: 2px solid #c5a47e; padding-bottom: 3px; }
+
+.rsvp-section { background: #c5a47e; color: white; }
+.rsvp-section h2 { color: white; }
+.rsvp-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: white; color: #333; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px; transition: transform 0.3s; }
+.rsvp-button:hover { transform: scale(1.05); }
+
+footer { padding: 20px; background-color: #333; color: white; font-family: 'Playfair Display', serif; }
+@media (max-width: 768px) { .hero-content h1 { font-size: 3.5rem; } #countdown { font-size: 1.5rem; gap: 15px; } }

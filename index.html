@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Language changed to Spanish -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos! | Eduardo & Mellanie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- SECTION 1: GUEST FINDER (Traducido) -->
+    <div id="guest-finder">
+        <div class="finder-content">
+            <h1>Eduardo & Mellanie</h1>
+            <p>Para ver tu invitación personal, por favor ingresa tu nombre completo.</p>
+            <input type="text" id="guest-search-input" placeholder="Tu nombre completo...">
+            <button id="search-button">Buscar Mi Invitación</button>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <!-- SECTION 2: INVITATION CONTENT (Traducido) -->
+    <div id="invitation-content" style="display:none;">
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1>Eduardo & Mellanie</h1>
+                <p>¡Nos casamos!</p>
+                <p class="date">26.10.2025</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="guest-welcome">
+                <h2 id="guest-name">¡Bienvenido!</h2>
+                <p>Estamos muy emocionados de compartir nuestro día especial contigo.</p>
+                <p>Esta invitación es válida para <b id="guest-passes">1 persona</b>.</p>
+            </section>
+
+            <section class="countdown-section">
+                <h2>Falta Poco Para El Gran Día</h2>
+                <div id="countdown"></div>
+            </section>
+
+            <section class="event-section ceremony">
+                <div class="event-content">
+                    <i class="fas fa-church event-icon"></i>
+                    <h2>Ceremonia</h2>
+                    <p><strong>Hora:</strong> 4:00 PM</p>
+                    <p><strong>Lugar:</strong> Catedral de San Pablo</p>
+                    <a href="https://maps.google.com" target="_blank" class="map-button">Cómo Llegar</a>
+                </div>
+            </section>
+
+            <section class="event-section reception">
+                <div class="event-content">
+                    <i class="fas fa-champagne-glasses event-icon"></i>
+                    <h2>Recepción</h2>
+                    <p><strong>Hora:</strong> 6:00 PM</p>
+                    <p><strong>Lugar:</strong> Salón "The Grand Ballroom"</p>
+                    <a href="https://maps.google.com" target="_blank" class="map-button">Cómo Llegar</a>
+                </div>
+            </section>
+            
+            <section class="sponsors-section">
+                <h2>Nuestros Padrinos</h2>
+                <p>Con cariño y gratitud a nuestros padrinos especiales:</p>
+                <p class="sponsor-name">Maria y Jose Garcia</p>
+            </section>
+
+            <section class="info-section">
+                <div class="info-item">
+                    <i class="fas fa-gift info-icon"></i>
+                    <h3>Mesa de Regalos</h3>
+                    <p>Tu presencia es nuestro mejor regalo. Si deseas obsequiarnos algo, puedes ver nuestra mesa de regalos.</p>
+                    <a href="#" target="_blank" class="info-link">Ver Mesa de Regalos</a>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-user-tie info-icon"></i>
+                    <h3>Código de Vestimenta</h3>
+                    <p>Nos encantaría verte en tu mejor atuendo.</p>
+                    <p class="dress-code">Vestimenta Formal</p>
+                </div>
+            </section>
+
+            <section class="rsvp-section">
+                <h2>Confirmar Asistencia</h2>
+                <p>Por favor confirma tu asistencia vía WhatsApp.</p>
+                <a href="https://api.whatsapp.com/send?phone=+50588174264&text=¡Hola!%20Me%20gustaría%20confirmar%20mi%20asistencia%20a%20la%20boda." class="rsvp-button">Confirmar por WhatsApp</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>Eduardo & Mellanie</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
